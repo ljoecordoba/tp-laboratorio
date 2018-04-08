@@ -13,10 +13,16 @@ buildscript {
       classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:1.0.2'
     }
   }
-  plugins {
+}
+plugins {
     id 'jacoco'
     id 'com.github.kt3k.coveralls' version '2.6.3'
 }
+// Apply the java-library plugin to add support for Java Library
+apply plugin: 'java-library'
+apply plugin: 'java'
+apply plugin: 'com.github.kt3k.coveralls'
+apply plugin: 'jacoco'
 
 jacocoTestReport {
     reports {
@@ -24,13 +30,6 @@ jacocoTestReport {
         html.enabled = true
     }
 }
-}
-
-// Apply the java-library plugin to add support for Java Library
-apply plugin: 'java-library'
-apply plugin: 'java'
-apply plugin: 'com.github.kt3k.coveralls'
-apply plugin: 'jacoco'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
