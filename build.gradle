@@ -5,7 +5,14 @@
  * For more details take a look at the Java Libraries chapter in the Gradle
  * user guide available at https://docs.gradle.org/4.3/userguide/java_library_plugin.html
  */
-
+buildscript {
+  repositories {
+    jcenter()
+    dependencies {
+      classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
+    }
+  }
+}
 plugins {
     id 'jacoco'
     id 'com.github.kt3k.coveralls' version '2.6.3'
