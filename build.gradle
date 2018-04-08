@@ -17,6 +17,7 @@ buildscript {
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
 apply plugin: 'java'
+apply plugin: 'com.github.kt3k.coveralls'
 apply plugin: 'jacoco'
 
 // In this section you declare where to find the dependencies of your project
@@ -24,6 +25,13 @@ repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
 }
 
 dependencies {
