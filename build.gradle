@@ -31,6 +31,24 @@ jacocoTestReport {
     }
 }
 
+coveralls {
+    sourceDirs = subprojects.sourceSets.main.allSource.srcDirs.flatten()
+    jacocoReportPath = "${projectDir}/http/build/reports/jacoco/test/jacocoTestReport.xml"
+}
+
+tasks.coveralls {
+    onlyIf { System.env.'CI' }
+}
+
+githubPages {
+    repoUri = githubUrl
+    pages {
+        from (file ("$buildDir/$projectSite")) {
+            into '.'
+        }
+    }
+}
+
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use jcenter for resolving your dependencies.
