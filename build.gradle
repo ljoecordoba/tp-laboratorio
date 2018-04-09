@@ -50,6 +50,7 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:23.0'
     // Use JUnit test framework
+    compile 'org.xerial:sqlite-jdbc:3.8.11.2'
     testImplementation 'junit:junit:4.12'
     testCompile 'junit:junit:4.12'
 }
