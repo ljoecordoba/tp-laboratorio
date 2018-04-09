@@ -1,4 +1,4 @@
-package persistencia;
+package com.tplaboratorio.persistencia;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,11 +12,11 @@ public class SQLiteJDBCDriverConnection {
      /**
      * Connect to a sample database
      */
-    public static Connection connect() {
+    public static Connection getConnection(String databaseDir) {
         Connection conn = null;
         try {
             // db parameters
-            String url = "jdbc:sqlite:/home/luciano/Escritorio/laboratorio.db";
+            String url = "jdbc:sqlite:"+databaseDir;
             // create a connection to the database
             conn = DriverManager.getConnection(url);
             
@@ -28,22 +28,5 @@ public class SQLiteJDBCDriverConnection {
             return null;
         } 
     }
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Connection con = connect();
-        try {
-			PreparedStatement stmt = con.prepareStatement("INSERT INTO TBL1 VALUES(?,?)");
-			stmt.setString(1, "Luciano");
-			stmt.setString(2, "39040519");
-			stmt.executeUpdate();
-			stmt.setString(1, "Jorge");
-			stmt.setString(2, "77489000");
-			stmt.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    }
+   
 }

@@ -3,9 +3,11 @@
  */
 import org.junit.Test;
 import static org.junit.Assert.*;
+import com.tplaboratorio.persistencia.*;
 
 public class ConnectionTest {
     @Test public void testSomeLibraryMethod() {
-    	assertTrue(true);
+    	
+    	assertTrue(SQLiteJDBCDriverConnection.getConnection("") != null);
     }
 }
