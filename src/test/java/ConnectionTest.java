@@ -9,5 +9,6 @@ public class ConnectionTest {
     @Test public void testSomeLibraryMethod() {
     	
     	assertTrue(SQLiteJDBCDriverConnection.getConnection("") != null);
+    	assertTrue(SQLiteJDBCDriverConnection.getConnection("//*gffggfdf") == null);
     }
 }
