@@ -7,7 +7,7 @@ import com.tplaboratorio.persistencia.*;
 
 public class ConnectionTest {
     @Test public void testSomeLibraryMethod() {
-    	
+    	SQLiteJDBCDriverConnection conn = new SQLiteJDBCDriverConnection();
     	assertTrue(SQLiteJDBCDriverConnection.getConnection("") != null);
     	assertTrue(SQLiteJDBCDriverConnection.getConnection("//*gffggfdf") == null);
     }
