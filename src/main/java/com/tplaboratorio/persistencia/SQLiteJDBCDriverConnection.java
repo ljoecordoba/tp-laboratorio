@@ -25,13 +25,9 @@ public class SQLiteJDBCDriverConnection {
             
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            System.out.println("holaa");
             return null;
         } 
     }
-    
-    public static void main(String[] args) {
-    	getConnection("/////ddfdsdf");
-	}
+  
    
 }
