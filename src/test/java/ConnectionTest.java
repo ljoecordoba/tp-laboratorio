@@ -6,7 +6,12 @@ import static org.junit.Assert.*;
 import com.tplaboratorio.persistencia.*;
 
 public class ConnectionTest {
-    @Test public void testSomeLibraryMethod() {
+    @Test public void testGetConnection() {
+    	SQLiteJDBCDriverConnection conn = new SQLiteJDBCDriverConnection();
+    	assertTrue(SQLiteJDBCDriverConnection.getConnection("") != null);
+    	assertTrue(SQLiteJDBCDriverConnection.getConnection("//*gffggfdf") == null);
+    }
+    @Test public void testGetConnection2() {
     	SQLiteJDBCDriverConnection conn = new SQLiteJDBCDriverConnection();
     	assertTrue(SQLiteJDBCDriverConnection.getConnection("") != null);
     	assertTrue(SQLiteJDBCDriverConnection.getConnection("//*gffggfdf") == null);
