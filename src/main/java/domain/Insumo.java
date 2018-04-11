@@ -1,5 +1,7 @@
 package domain;
 
-public class Insumo {
-
+public class Insumo
+{
+	int  id;
+	String nombre;
 }

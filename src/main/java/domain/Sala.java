@@ -1,5 +1,6 @@
 package domain;
 
-public class Sala {
-
+public class Sala
+{
+	String codigo;
 }
