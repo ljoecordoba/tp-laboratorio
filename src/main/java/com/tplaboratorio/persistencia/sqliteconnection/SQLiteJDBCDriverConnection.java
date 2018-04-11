@@ -1,4 +1,4 @@
-package com.tplaboratorio.persistencia;
+package com.tplaboratorio.persistencia.sqliteconnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,9 +12,10 @@ public class SQLiteJDBCDriverConnection {
      /**
      * Connect to a sample database
      */
-    public static Connection getConnection(String databaseDir) {
+    public static Connection getConnection() {
         Connection conn = null;
         try {
+        	String databaseDir = "";
             // db parameters
             String url = "jdbc:sqlite:"+databaseDir;
             // create a connection to the database
