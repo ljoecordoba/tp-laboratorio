@@ -37,7 +37,6 @@ public class OrdenDeCompraDAOImpl implements OrdenDeCompraDAO
 				List<Item> items = null;
 				double total = set.getDouble(4);
 				Estado estado = null;
-				OrdenDeCompra orden = new OrdenDeCompra(id, proveedor, items, total, estado);
 				
 			}
 			
