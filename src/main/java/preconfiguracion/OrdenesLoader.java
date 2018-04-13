@@ -1,7 +1,13 @@
 package preconfiguracion;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import domain.Domicilio;
 import domain.Estado;
@@ -68,6 +74,42 @@ public class OrdenesLoader
 //		items.add(new Item(new Insumo(1, "Tuerca"), 5, 0));
 //		items.add(new Item(new Insumo(1, "Tuerca"), 5, 0));
 //		ordenes.add(new OrdenDeCompra(1, proveedor4, items, 0));
+		BufferedReader br = null;
+		FileReader fr = null;
+
+		try {
+
+			
+			fr = new FileReader("C:\\Users\\alumnos\\Desktop\\insumos.txt");
+			br = new BufferedReader(fr);
+
+			String sCurrentLine;
+
+			while ((sCurrentLine = br.readLine()) != null) {
+				System.out.println(sCurrentLine);
+			}
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		} finally {
+
+			try {
+
+				if (br != null)
+					br.close();
+
+				if (fr != null)
+					fr.close();
+
+			} catch (IOException ex) {
+
+				ex.printStackTrace();
+
+			}
+
+		}
 	}
 	
 	public List<OrdenDeCompra> getOrdenes()
@@ -75,7 +117,9 @@ public class OrdenesLoader
 		return ordenes;
 	}
 	
-	
+	public static void main(String[] args) {
+		OrdenesLoader or = new OrdenesLoader();
+	}
 	
 	
 	
