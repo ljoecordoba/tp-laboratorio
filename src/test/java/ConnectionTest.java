@@ -10,5 +10,6 @@ public class ConnectionTest {
     	SQLiteJDBCDriverConnection conn = new SQLiteJDBCDriverConnection();
     	assertTrue(SQLiteJDBCDriverConnection.getConnection("") != null);
     	assertTrue(SQLiteJDBCDriverConnection.getConnection("//*gffggfdf") == null);
+    	//Comment
     }
 }
