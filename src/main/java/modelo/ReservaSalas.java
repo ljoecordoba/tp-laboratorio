@@ -20,4 +20,12 @@ public class ReservaSalas
 		
 	}
 	
+	public List<ReservaSala> getReservas()
+	{
+		return reservas;
+	}
+	
+	
+	
+	
 }
