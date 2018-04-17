@@ -79,37 +79,33 @@ public class OrdenesLoader
 
 		try {
 
-			
-			fr = new FileReader("C:\\Users\\alumnos\\Desktop\\insumos.txt");
-			br = new BufferedReader(fr);
-
-			String sCurrentLine;
-
-			while ((sCurrentLine = br.readLine()) != null) {
-				System.out.println(sCurrentLine);
+			if(System.getProperties().getProperty("os.name").contains("Linux"))
+			{
+				String dir = System.getProperty("user.dir");
+				System.out.println(dir);
+				fr = new FileReader(dir+"/resources/archivos/insumos.txt");
 			}
+			else
+			{
+				
+				fr = new FileReader("C:\\Users\\alumnos\\Desktop\\insumos.txt");
 
+			}
+			
 		} catch (IOException e) {
 
 			e.printStackTrace();
 
-		} finally {
-
-			try {
-
-				if (br != null)
-					br.close();
-
-				if (fr != null)
-					fr.close();
-
-			} catch (IOException ex) {
-
-				ex.printStackTrace();
-
-			}
-
-		}
+		} 
+		Scanner read = null;
+		read = new Scanner(fr);
+		   // Check if there is another line of input
+		   while(read.hasNextLine()){
+		    String str = read.nextLine();
+		    parseLine(str);
+		   }
+			  
+			  read.close();
 	}
 	
 	public List<OrdenDeCompra> getOrdenes()
@@ -117,8 +113,27 @@ public class OrdenesLoader
 		return ordenes;
 	}
 	
+	 private static void parseLine(String str){
+		  String book, author, price, yolo,chapu;
+		  Scanner sc = new Scanner(str);
+		  sc.useDelimiter("[|]");
+
+		  // Check if there is another line of input
+		  while(sc.hasNext()){
+		   book = sc.next();
+		   author = sc.next();
+		   price = sc.next();
+		   yolo = sc.next();
+		   chapu = sc.next();
+		   System.out.println("Book - " + book + " Author - " + author + 
+		     " Price - " + price+ 
+		     " Yolo- " + yolo + " Chapu- "+ chapu);  
+		  }
+		  sc.close();
+		 } 
+	
 	public static void main(String[] args) {
-		OrdenesLoader or = new OrdenesLoader();
+		OrdenesLoader ordenes = new OrdenesLoader();
 	}
 	
 	

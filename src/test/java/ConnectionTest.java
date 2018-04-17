@@ -4,8 +4,12 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class ConnectionTest {
-    @Test public void testGetConnection() {
+public class ConnectionTest
+{
+    @Test public void testGetConnection()
+    {
     	assertTrue(true);
     }
+    
+    
 }
