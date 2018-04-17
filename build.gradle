@@ -53,5 +53,6 @@ dependencies {
     compile 'org.xerial:sqlite-jdbc:3.8.11.2'
     testImplementation 'junit:junit:4.12'
     testCompile 'junit:junit:4.12'
+    compile  'no.tornado.databinding:jxdatepicker-support:1.0'
 }
 
