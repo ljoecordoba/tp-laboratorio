@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 
 public class ConnectionTest {
     @Test public void testGetConnection() {
+                //Probando coveralls
     	    	assertTrue(true);
 
     }
